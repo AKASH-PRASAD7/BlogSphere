@@ -46,11 +46,16 @@ class AuthService {
   }
   async getCurrrntUser() {
     try {
-      return await this.account.get();
+      const user = await this.account.get();
+
+      if (user) {
+        return user;
+      } else {
+        return null;
+      }
     } catch (error) {
       throw error;
     }
-    return null;
   }
 }
 
