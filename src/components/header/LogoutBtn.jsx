@@ -14,7 +14,7 @@ const LogoutBtn = () => {
   };
 
   return (
-    <button className="p-2 bg-black text-white rounded-xl font-semibold">
+    <button className="p-2 bg-black hover:bg-red-600 text-white rounded-xl font-semibold">
       Logout
     </button>
   );
