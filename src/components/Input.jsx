@@ -27,4 +27,4 @@ const Input = forwardRef(
   }
 );
 
-export default Input;
+export default forwardRef(Input);
