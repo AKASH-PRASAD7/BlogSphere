@@ -6,7 +6,7 @@ class FileUpload {
   bucket;
 
   constructor() {
-    this.client.setEndpoint(conf.appwriteUrl).setEndpoint(conf.projecrId);
+    this.client.setEndpoint(conf.appwriteUrl).setProject(conf.projecrId);
     this.bucket = new Storage(this.client);
   }
 

@@ -6,7 +6,7 @@ class Service {
   databases;
 
   constructor() {
-    this.client.setEndpoint(conf.appwriteUrl).setEndpoint(conf.projecrId);
+    this.client.setEndpoint(conf.appwriteUrl).setProject(conf.projecrId);
     this.databases = new Databases(this.client);
   }
 

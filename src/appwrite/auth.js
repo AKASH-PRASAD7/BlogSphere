@@ -6,7 +6,7 @@ class AuthService {
   account;
 
   constructor() {
-    this.client.setEndpoint(conf.appwriteUrl).setEndpoint(conf.projecrId);
+    this.client.setEndpoint(conf.appwriteUrl).setProject(conf.projecrId);
     this.account = new Account(this.client);
   }
 
@@ -46,13 +46,7 @@ class AuthService {
   }
   async getCurrrntUser() {
     try {
-      const user = await this.account.get();
-
-      if (user) {
-        return user;
-      } else {
-        return null;
-      }
+      return await this.account.get();
     } catch (error) {
       throw error;
     }
