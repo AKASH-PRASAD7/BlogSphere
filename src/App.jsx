@@ -20,7 +20,7 @@ function App() {
           dispatch(logout());
         }
       })
-      .catch((err) => setError(err))
+      .catch((err) => setError(err.message))
       .finally(() => setLoading(false));
   }, []);
 
@@ -31,11 +31,19 @@ function App() {
           <div>loading...</div>
         ) : (
           <main className="bg-gray-600 text-white min-h-screen ">
-            <Header />
-            <section>
-              <Outlet />
-            </section>
-            <Footer />
+            {/* {error ? (
+              <p className="text-xl font-semibold m-4 text-center text-red-700">
+                {error}
+              </p>
+            ) : ( */}
+            <>
+              <Header />
+              <section>
+                <Outlet />
+              </section>
+              <Footer />
+            </>
+            {/* )} */}
           </main>
         )}
       </main>
